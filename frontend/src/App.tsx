@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { generateCode } from "./generateCode";
-import SettingsDialog from "./components/settings/SettingsDialog";
+// import SettingsDialog from "./components/settings/SettingsDialog";
 import { AppState, CodeGenerationParams, EditorTheme, Settings } from "./types";
 import { IS_RUNNING_ON_CLOUD } from "./config";
 import { PicoBadge } from "./components/messages/PicoBadge";
@@ -65,7 +65,7 @@ function App() {
       screenshotOneApiKey: null,
       isImageGenerationEnabled: true,
       editorTheme: EditorTheme.COBALT,
-      generatedCodeConfig: Stack.HTML_TAILWIND,
+      generatedCodeConfig: Stack.HTML_CSS,
       codeGenerationModel: CodeGenerationModel.CLAUDE_3_5_SONNET_2024_06_20,
       // Only relevant for hosted version
       isTermOfServiceAccepted: false,
@@ -87,8 +87,7 @@ function App() {
   const showSelectAndEditFeature =
     (model === CodeGenerationModel.GPT_4O_2024_05_13 ||
       model === CodeGenerationModel.CLAUDE_3_5_SONNET_2024_06_20) &&
-    (settings.generatedCodeConfig === Stack.HTML_TAILWIND ||
-      settings.generatedCodeConfig === Stack.HTML_CSS);
+    settings.generatedCodeConfig === Stack.HTML_CSS;
 
   // Indicate coding state using the browser tab's favicon and title
   useBrowserTabIndicator(appState === AppState.CODING);
@@ -100,7 +99,7 @@ function App() {
     if (!settings.generatedCodeConfig) {
       setSettings((prev) => ({
         ...prev,
-        generatedCodeConfig: Stack.HTML_TAILWIND,
+        generatedCodeConfig: Stack.HTML_CSS,
       }));
     }
   }, [settings.generatedCodeConfig, setSettings]);
@@ -344,12 +343,12 @@ function App() {
           onOpenChange={handleTermDialogOpenChange}
         />
       )}
-      <div className="lg:fixed lg:inset-y-0 lg:z-40 lg:flex lg:w-96 lg:flex-col">
+      <div className="lg:fixed lg:inset-y-0 lg:z-40 lg:flex lg:80 lg:flex-col">
         <div className="flex grow flex-col gap-y-2 overflow-y-auto border-r border-gray-200 bg-white px-6 dark:bg-zinc-950 dark:text-white">
           {/* Header with access to settings */}
           <div className="flex items-center justify-between mt-10 mb-2">
-            <h1 className="text-2xl ">Screenshot to Code</h1>
-            <SettingsDialog settings={settings} setSettings={setSettings} />
+            <h1 className="text-2xl ">SreData Clone</h1>
+            {/*<SettingsDialog settings={settings} setSettings={setSettings} />*/}
           </div>
 
           {/* Generation settings like stack and model */}

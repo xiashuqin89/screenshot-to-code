@@ -7,7 +7,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  // DialogTrigger,
 } from "./ui/dialog";
 import { Textarea } from "./ui/textarea";
 import OutputSettingsSection from "./settings/OutputSettingsSection";
@@ -37,11 +37,11 @@ function ImportCodeSection({ importFromCode }: Props) {
   };
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button className="import-from-code-btn" variant="secondary">
-          Import from Code
-        </Button>
-      </DialogTrigger>
+      {/*<DialogTrigger asChild>*/}
+      {/*  <Button className="import-from-code-btn" variant="secondary">*/}
+      {/*    导入代码*/}
+      {/*  </Button>*/}
+      {/*</DialogTrigger>*/}
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Paste in your HTML code</DialogTitle>

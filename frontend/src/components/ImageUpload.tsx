@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { useDropzone } from "react-dropzone";
 import { toast } from "react-hot-toast";
-import { URLS } from "../urls";
+// import { URLS } from "../urls";
 import ScreenRecorder from "./recording/ScreenRecorder";
 import { ScreenRecorderState } from "../types";
 
@@ -164,23 +164,22 @@ function ImageUpload({ setReferenceImages }: Props) {
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
         <div {...getRootProps({ style: style as any })}>
           <input {...getInputProps()} className="file-input" />
-          <p className="text-slate-700 text-lg">
-            Drag & drop a screenshot here, <br />
-            or click to upload
+          <p className="text-slate-700 text-base">
+            拖拽目标图片或截屏到这里, <br />
+            点击上传
           </p>
         </div>
       )}
       {screenRecorderState === ScreenRecorderState.INITIAL && (
         <div className="text-center text-sm text-slate-800 mt-4">
-          Upload a screen recording (.mp4, .mov) or record your screen to clone
-          a whole app (experimental).{" "}
-          <a
-            className="underline"
-            href={URLS["intro-to-video"]}
-            target="_blank"
-          >
-            Learn more.
-          </a>
+          上传一个截屏(.mp4, .mov).{" "}
+          {/*<a*/}
+          {/*  className="underline"*/}
+          {/*  href={URLS["intro-to-video"]}*/}
+          {/*  target="_blank"*/}
+          {/*>*/}
+          {/*  Learn more.*/}
+          {/*</a>*/}
         </div>
       )}
       <ScreenRecorder
