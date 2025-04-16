@@ -19,13 +19,13 @@ interface Props {
 function OutputSettingsSection({
   stack,
   setStack,
-  label = "生成:",
+  label = "生成格式:",
   shouldDisableUpdates = false,
 }: Props) {
   return (
     <div className="flex flex-col gap-y-2 justify-between text-sm">
-      <div className="grid grid-cols-3 items-center gap-4">
-        <span>{label}</span>
+      <div className="grid grid-cols-2 items-center">
+        <span className="mb-2">{label}</span>
         <Select
           value={stack}
           onValueChange={(value: string) => setStack(value as Stack)}

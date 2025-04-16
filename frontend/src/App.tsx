@@ -23,6 +23,7 @@ import { GenerationSettings } from "./components/settings/GenerationSettings";
 import StartPane from "./components/start-pane/StartPane";
 import { Commit } from "./components/commits/types";
 import { createCommit } from "./components/commits/utils";
+import Toolbar from "@/components/toolbar/Toolbar";
 
 function App() {
   const {
@@ -336,6 +337,7 @@ function App() {
 
   return (
     <div className="mt-2 dark:bg-black dark:text-white">
+      <Toolbar />
       {IS_RUNNING_ON_CLOUD && <PicoBadge />}
       {IS_RUNNING_ON_CLOUD && (
         <TermsOfServiceDialog
@@ -346,8 +348,8 @@ function App() {
       <div className="lg:fixed lg:inset-y-0 lg:z-40 lg:flex lg:80 lg:flex-col">
         <div className="flex grow flex-col gap-y-2 overflow-y-auto border-r border-gray-200 bg-white px-6 dark:bg-zinc-950 dark:text-white">
           {/* Header with access to settings */}
-          <div className="flex items-center justify-between mt-10 mb-2">
-            <h1 className="text-2xl ">SreData Clone</h1>
+          <div className="flex items-center justify-between mt-4 mb-4">
+            <h1 className="text-2xl ">Shortcut</h1>
             {/*<SettingsDialog settings={settings} setSettings={setSettings} />*/}
           </div>
 
