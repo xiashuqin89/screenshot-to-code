@@ -23,7 +23,7 @@ import { GenerationSettings } from "./components/settings/GenerationSettings";
 import StartPane from "./components/start-pane/StartPane";
 import { Commit } from "./components/commits/types";
 import { createCommit } from "./components/commits/utils";
-import Toolbar from "@/components/toolbar/Toolbar";
+// import Toolbar from "@/components/toolbar/Toolbar";
 
 function App() {
   const {
@@ -337,7 +337,7 @@ function App() {
 
   return (
     <div className="mt-2 dark:bg-black dark:text-white">
-      <Toolbar />
+      {/*<Toolbar />*/}
       {IS_RUNNING_ON_CLOUD && <PicoBadge />}
       {IS_RUNNING_ON_CLOUD && (
         <TermsOfServiceDialog
